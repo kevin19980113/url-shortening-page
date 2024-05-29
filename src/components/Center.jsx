@@ -69,7 +69,9 @@ export default function Center() {
 
             {isError && (
               <p className="text-red-400 text-xs text-center lg:text-left lg:absolute lg:top-12">
-                {errorMsg}
+                {errorMsg
+                  ? errorMsg
+                  : "Error! Please enter a valid URL. It also can't include &, ?, #, or other reserved"}
               </p>
             )}
           </div>

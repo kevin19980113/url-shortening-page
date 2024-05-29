@@ -5,16 +5,16 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    proxy: {
-      "/api": {
-        target: "https://cleanuri.com/",
-        changeOrigin: true,
-        rewrite: (path) => {
-          console.log("Rewriting path:", path);
-          return path.replace(/^\/api/, "/api");
-        },
-      },
-    },
+    // proxy: {
+    //   "/api": {
+    //     target: "https://cleanuri.com/",
+    //     changeOrigin: true,
+    //     rewrite: (path) => {
+    //       console.log("Rewriting path:", path);
+    //       return path.replace(/^\/api/, "/api");
+    //     },
+    //   },
+    // },
   },
   base: "/url-shortening-page/",
 });

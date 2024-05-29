@@ -14,6 +14,7 @@ export default function Center() {
 
   async function shortenurl(e) {
     e.preventDefault();
+
     setIsLoading(true);
     try {
       const input = inputRef.current.value;
@@ -27,15 +28,7 @@ export default function Center() {
 
       e.target.reset();
     } catch (error) {
-      if (error.message.includes("invalid")) {
-        setErrorMsg(
-          "This URL is invalid!! Please enter a valid URL. It also can't include &, ?, #, or other reserved parameters."
-        );
-      }
-
-      if (error.message.includes("empty")) {
-        setErrorMsg("Please enter a URL. It cannot be empty");
-      }
+      setErrorMsg(error.message);
 
       setIsLoading(false);
       setIsError(true);
@@ -69,9 +62,7 @@ export default function Center() {
 
             {isError && (
               <p className="text-red-400 text-xs text-center lg:text-left lg:absolute lg:top-12">
-                {errorMsg
-                  ? errorMsg
-                  : "Error! Please enter a valid URL. It also can't include &, ?, #, or other reserved"}
+                {errorMsg}
               </p>
             )}
           </div>

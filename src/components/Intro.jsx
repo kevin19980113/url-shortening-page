@@ -22,8 +22,8 @@ export default function Intro() {
           links performing.
         </p>
         <button
-          className="w-2/3 px-8 py-2 text-xl text-white bg-teal-400 rounded-3xl
-         hover:bg-teal-300 active:bg-teal-400 lg:w-5/12 xl:text-2xl"
+          className="px-6 py-2 text-lg text-white bg-teal-400 rounded-3xl
+         hover:bg-teal-300 active:bg-teal-400"
         >
           Get started
         </button>

@@ -6,7 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "https://cleanuri.com/",
+      "/api": {
+        target: "https://cleanuri.com/",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
     },
   },
   base: "/url-shortening-page/",

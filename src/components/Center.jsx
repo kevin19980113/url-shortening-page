@@ -54,7 +54,7 @@ export default function Center() {
     <section className="w-full flex flex-col items-center justify-center">
       <form
         className="w-11/12 rounded-2xl z-10 bg-violet-950 px-4 py-4
-      bg-[url(./src/assets/bg-shorten-desktop.svg)] bg-cover bg-center
+      bg-[url(/src/assets/bg-shorten-desktop.svg)] bg-cover bg-center
       lg:w-11/12 lg:px-12 lg:py-8 xl:w-10/12"
         onSubmit={(e) => shortenurl(e)}
       >

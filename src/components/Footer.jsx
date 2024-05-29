@@ -4,10 +4,10 @@ import SocialmediaContainer from "./SocialmediaContainer";
 export default function Footer() {
   return (
     <footer
-      className="w-full px-4 pt-16 pb-24 bg-zinc-900 flex-col items-center 
-    justify-between"
+      className="w-full px-4 pt-16 pb-24 bg-zinc-900 flex flex-col gap-y-16 items-center 
+    justify-between lg:flex-row lg:items-start lg:px-12 xl:px-24"
     >
-      <figure className="mx-auto w-32 mb-16 pl-2">
+      <figure className="mx-auto w-32 pl-2 lg:m-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-8 fill-white "
@@ -16,8 +16,8 @@ export default function Footer() {
         </svg>
       </figure>
 
-      <div className="flex-col items-center">
-        <section className="flex-col gap-x-16">
+      <div className="flex flex-col items-center gap-y-16 lg:flex-row lg:gap-x-16 lg:items-start xl:gap-x-44">
+        <section className="flex flex-col gap-y-8 lg:flex-row lg:gap-x-16 xl:gap-x-24">
           <FooterNav
             title="features"
             linkNames={["Link Shortening", "Branded Links", "Analytics"]}

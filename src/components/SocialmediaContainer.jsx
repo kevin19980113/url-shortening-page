@@ -3,7 +3,7 @@ export default function SocialmediaContainer() {
   let iconstyles =
     "w-6 h-6 fill-white hover:fill-teal-300 transition duration-300 ease-in";
   return (
-    <section className="mt-16">
+    <section>
       <ul className="flex gap-x-6 items-center justify-center">
         <li>
           <a href="#">

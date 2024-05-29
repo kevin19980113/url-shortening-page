@@ -9,4 +9,5 @@ export default defineConfig({
       "/api": "https://cleanuri.com",
     },
   },
+  base: "/url-shortening-page/",
 });

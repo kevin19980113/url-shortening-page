@@ -15,6 +15,11 @@ export default function ShorterUrlList({
   let ButtonStyle =
     "w-full mt-4 px-6 py-2 text-white bg-teal-400 rounded-md hover:bg-teal-300 active:bg-teal-400";
 
+  const responsive = " lg:m-0";
+
+  CopiedButtonStlye += responsive;
+  ButtonStyle += responsive;
+
   function handleCopy(url, index) {
     navigator.clipboard.writeText(url);
     setIsCopied(index);
@@ -23,31 +28,40 @@ export default function ShorterUrlList({
 
   return (
     <div className="w-full mb-16 -mt-24">
-      <ul className="w-full flex flex-col items-center">
+      <ul className="w-full flex flex-col gap-y-4 items-center">
         {isLoading && <Loading />}
         {!isLoading &&
           shorterUrlList.map((url, index) => (
             <li
               key={url}
-              className="w-full py-4 px-4 flex-col items-center text-xs bg-white rounded-md"
+              className="w-full py-4 px-4 flex flex-col items-center text-xs bg-white rounded-md 
+              lg:flex-row lg:justify-between xl:text-sm"
             >
-              <p className="text-black break-words">{longerUrlList[index]}</p>
+              <p className="w-full text-left text-black break-words lg:w-auto">
+                {longerUrlList[index]}
+              </p>
 
-              <hr className="w-full h-0.5 my-2" />
+              <hr className="w-full h-0.5 my-2 lg:hidden" />
 
-              <a
-                href={url}
-                className="w-fll break-words text-teal-400 hover:text-teal-500 active:text-teal-400"
-              >
-                {url}
-              </a>
-              <button
-                className={isCopied === index ? CopiedButtonStlye : ButtonStyle}
-                onClick={() => handleCopy(url, index)}
-                disabled={isCopied === index ? true : false}
-              >
-                {isCopied === index ? "Copied!" : "Copy"}
-              </button>
+              <div className="w-full lg:flex lg:items-center lg:gap-x-6 lg:w-auto">
+                <a
+                  href={url}
+                  className="w-full text-left break-words text-teal-400 
+                  hover:text-teal-500 active:text-teal-400"
+                  target="_blank"
+                >
+                  {url}
+                </a>
+                <button
+                  className={
+                    isCopied === index ? CopiedButtonStlye : ButtonStyle
+                  }
+                  onClick={() => handleCopy(url, index)}
+                  disabled={isCopied === index ? true : false}
+                >
+                  {isCopied === index ? "Copied!" : "Copy"}
+                </button>
+              </div>
             </li>
           ))}
       </ul>

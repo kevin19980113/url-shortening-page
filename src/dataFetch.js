@@ -1,5 +1,8 @@
+const API_BASE_URL =
+  process.env.NODE_ENV === "production" ? "https://cleanuri.com" : "/api";
+
 export async function getShortenUrl(url) {
-  const response = await fetch("/api/v1/shorten", {
+  const response = await fetch(`${API_BASE_URL}/v1/shorten`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

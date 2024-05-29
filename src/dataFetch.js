@@ -1,10 +1,8 @@
 const API_BASE_URL =
-  import.meta.env.MODE === "production"
-    ? "/netlify/functions/shorten-url"
-    : "/api";
+  import.meta.env.MODE === "production" ? "https://cleanuri.com/api" : "/api";
 
 export async function getShortenUrl(url) {
-  const response = await fetch(API_BASE_URL, {
+  const response = await fetch(`${API_BASE_URL}/v1/shorten`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

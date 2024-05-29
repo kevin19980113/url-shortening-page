@@ -1,5 +1,5 @@
 export async function getShortenUrl(url) {
-  const response = await fetch("https://cleanuri.com/api/v1/shorten", {
+  const response = await fetch("/api/v1/shorten", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

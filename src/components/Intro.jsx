@@ -1,6 +1,9 @@
 import workImg from "../assets/illustration-working.svg";
-
+import { useMediaQuery } from "react-responsive";
 export default function Intro() {
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
   return (
     <section
       className="w-full flex flex-col gap-y-4 items-center mb-16 
@@ -15,7 +18,7 @@ export default function Intro() {
           className="w-full px-4 text-4xl font-bold text-center leading-tight text-slate-800 
         lg:text-left lg:text-5xl lg:px-0 lg:leading-tight xl:text-7xl xl:leading-snug"
         >
-          More than just shorter links
+          More than just{isDesktop && <br />} shorter links
         </h1>
         <p className="w-full px-4 text-md text-center text-gray-500 lg:p-0 lg:text-left lg:w-2/3 xl:text-xl">
           Build your brand's recognition and get detailed insights on how your

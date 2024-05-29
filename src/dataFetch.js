@@ -1,5 +1,5 @@
 const apiKey = "XhiXtUJ0igWmmp0mNGzdDXz0VpSKM8CHmURudbhsZ9fFSTjo3hKUEkkDQQTH";
-const requestUrl = "https://tinyurl.com/app/dev/query";
+
 export async function getShortenUrl(url) {
   const response = await fetch(`https://api.tinyurl.com/create`, {
     method: "POST",

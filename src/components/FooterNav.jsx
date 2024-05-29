@@ -8,9 +8,7 @@ export default function FooterNav({ title, linkNames }) {
       <ul className="flex flex-col gap-y-2">
         {linkNames.map((linkName) => (
           <li key={linkName} className="text-center lg:text-left">
-            <a href="#" className={listStyle}>
-              {linkName}
-            </a>
+            <a className={listStyle}>{linkName}</a>
           </li>
         ))}
       </ul>

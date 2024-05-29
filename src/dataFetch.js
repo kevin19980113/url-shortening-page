@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  process.env.NODE_ENV === "production" ? "https://cleanuri.com" : "/api";
+  import.meta.env.MODE === "production" ? "https://cleanuri.com/api" : "/api";
 
 export async function getShortenUrl(url) {
   const response = await fetch(`${API_BASE_URL}/v1/shorten`, {
